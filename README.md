@@ -1,16 +1,12 @@
-# Fabric Example Mod
+# ToggleSprint
 
-## Setup
+## Description
 
-1. Edit gradle.properties, build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
-
-```
-./gradlew
-```
+This mod allows you to toggle sprinting. By default, sprinting is always enabled.
+Pressing the `i` key makes sprinting require the sprint key to be held, like usual.
+Pressing the `i` key again once again makes sprinting always enabled.
+When the game is relaunched, it is reset to the default option.
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This mod is available under the [MPL-2.0](LICENSE.txt) license.
