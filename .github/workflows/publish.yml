@@ -11,22 +11,22 @@ jobs:
     steps:
     - name: Checkout sources
       uses: actions/checkout@v3
-    - uses: gradle/wrapper-validation-action@v1.0.4
-    - name: Set up JDK 18
+    - name: Set up JDK 8
       uses: actions/setup-java@v3
       with:
         distribution: 'zulu'
-        java-version: 18
+        java-version: 8
     - name: Caching
       uses: actions/cache@v2.1.7
       with:
         path: |
-          ~/.gradle
-          .gradle
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          ~/.brachyura
+          .brachyura
+          buildscript/build
+        key: ${{ runner.os }}-brachyura-${{ hashFiles('**/Buildscript.*') }}
         restore-keys: ${{ runner.os }}-brachyura
-    - name: Build with Gradle
-      run: ./gradlew remapJar
+    - name: Build with Brachyura
+      run: java -jar brachyura-bootstrap-0.jar build
     - name: Publish to GitHub
       uses: Kir-Antipov/mc-publish@v2.1
       with:
